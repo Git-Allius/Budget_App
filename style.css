@@ -1,0 +1,91 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    padding-top: 30px;
+  }
+  
+  .container {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  input, select, button {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  
+  .percentages label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  ul#balances {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul#balances li {
+    display: flex;
+    justify-content: space-between;
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+  }
+  .percentages {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 80px 20px; /* name | input | % symbol */
+    align-items: center;
+    background: #f8f8f8;
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+  
+  .row input {
+    width: 70px;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+    position: relative;
+    right: 50px;
+  }
