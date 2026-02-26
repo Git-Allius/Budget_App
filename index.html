@@ -9,80 +9,78 @@
 <body>
   <div class="container">
     <h1>💰 Budget Tracker</h1>
-    
-    <!-- Paycheck form -->
+
+    <!-- PAYCHECK SECTION -->
     <section>
-        <h2>Enter Paycheck</h2>
-        <form id="paycheck-form">
-          <input type="number" id="paycheck" placeholder="Total paycheck amount" required />
-  
-          <h3>Set percentages:</h3>
-          <div class="percentages">
-            <div class="row"><span>Emergency</span><input type="number" id="emergencyPercent" value="5.07" min="0" max="100" step="0.01" /><span>%</span></div> 
-            <div class="row"><span>Food</span><input type="number" id="foodPercent" value="17.25" min="0" max="100" step="0.01" /><span>%</span></div> 
-            <div class="row"><span>Medical</span><input type="number" id="medicalPercent" value="11.16" min="0" max="100" step="0.01" /><span>%</span></div> 
-            <div class="row"><span>Transportation</span><input type="number" id="transportPercent" value="20.28" min="0" max="100" step="0.01" /><span>%</span></div> 
-            <div class="row"><span>Civic</span><input type="number" id="civicPercent" value="5.07" min="0" max="100" step="0.01" /><span>%</span></div> 
-            <div class="row"><span>Internet/Mobile</span><input type="number" id="internetPercent" value="7.10" min="0" max="100" step="0.01" /><span>%</span></div> 
-            <div class="row"><span>Other</span><input type="number" id="otherPercent" value="3.65" min="0" max="100" step="0.01" /><span>%</span></div> 
-            <div class="row"><span>Girlfriend</span><input type="number" id="girlfriendPercent" value="6.09" min="0" max="100" step="0.01" /><span>%</span></div> 
-            <div class="row"><span>Marriage</span><input type="number" id="marriagePercent" value="6.09" min="0" max="100" step="0.01" /><span>%</span></div> 
-            <div class="row"><span>Savings</span><input type="number" id="savingPercent" value="6.07" min="0" max="100" step="0.01" /><span>%</span></div> 
-            <div class="row"><span>Investment</span><input type="number" id="investmentPercent" value="6.07" min="0" max="100" step="0.01" /><span>%</span></div> 
-            <div class="row"><span>Pocket</span><input type="number" id="pocketPercent" value="6.10" min="0" max="100" step="0.01" /><span>%</span></div> 
-          </div>
-          <button type="submit">Allocate Budget</button>
-        </form>
-      </section>
-  
-      <hr />
-  
-      <!-- Deduct form -->
-      <section>
-        <h2>Deduct Expense</h2>
-        <form id="deduct-form">
-          <label for="category">Select category:</label>
-          <select id="category">
-            <option value="emergency">Emergency</option>
-            <option value="food">Food</option>
-            <option value="medical">Medical</option>
-            <option value="transportation">Transportation</option>
-            <option value="civic">Civic</option>
-            <option value="internet">Internet/Mobile</option>
-            <option value="other">Other</option>
-            <option value="girlfriend">Girlfriend</option>
-            <option value="marriage">Marriage</option>
-            <option value="savings">Savings</option>
-            <option value="investment">Investment</option>
-            <option value="pocket">Pocket</option>
-          </select>
-          <input type="number" id="deductAmount" placeholder="Amount to deduct" value="0" step="0.01" required />
-          <button type="submit">Deduct</button>
-        </form>
-      </section>
-  
-      <hr />
-  
-      <!-- Display balances -->
-      <section>
-        <h2>Current Balances</h2>
-      
-        <div id="total-income" class="total-income">
-          Total Balance: <strong>$0.00</strong>
+      <h2>Enter Paycheck</h2>
+      <form id="paycheck-form">
+        <input type="number" id="paycheck" placeholder="Total paycheck amount" step="0.01" required />
+
+        <h3>Set percentages (must equal 100%)</h3>
+
+        <div class="percentages">
+
+          <div class="row"><span>Emergency</span><input type="number" id="emergencyPercent" value="5.07" step="0.01"><span>%</span></div>
+          <div class="row"><span>Food</span><input type="number" id="foodPercent" value="17.25" step="0.01"><span>%</span></div>
+          <div class="row"><span>Medical</span><input type="number" id="medicalPercent" value="11.16" step="0.01"><span>%</span></div>
+          <div class="row"><span>Transportation</span><input type="number" id="transportPercent" value="20.28" step="0.01"><span>%</span></div>
+          <div class="row"><span>Civic</span><input type="number" id="civicPercent" value="5.07" step="0.01"><span>%</span></div>
+          <div class="row"><span>Internet/Mobile</span><input type="number" id="internetPercent" value="7.10" step="0.01"><span>%</span></div>
+          <div class="row"><span>Other</span><input type="number" id="otherPercent" value="3.65" step="0.01"><span>%</span></div>
+          <div class="row"><span>Layla</span><input type="number" id="laylaPercent" value="6.09" step="0.01"><span>%</span></div>
+          <div class="row"><span>Marriage</span><input type="number" id="marriagePercent" value="6.09" step="0.01"><span>%</span></div>
+          <div class="row"><span>Savings</span><input type="number" id="savingPercent" value="6.07" step="0.01"><span>%</span></div>
+          <div class="row"><span>Investment</span><input type="number" id="investmentPercent" value="6.07" step="0.01"><span>%</span></div>
+          <div class="row"><span>Pocket</span><input type="number" id="pocketPercent" value="6.10" step="0.01"><span>%</span></div>
+
         </div>
-        
-        <div>Future Total: 
-          <strong id="futureTotal">$0.00</strong>
-        </div>
-        <div>Spending Total: 
-          <strong id="spendingTotal">$0.00</strong>
-        </div>
-      
-        <ul id="balances"></ul>
-        <button id="resetButton" class="reset-btn">Reset All Balances</button>
-      </section>      
-    </div>
-  
-    <script src="script.js"></script>
-  </body>
-  </html>
+
+        <button type="submit">Allocate Budget</button>
+      </form>
+    </section>
+
+    <hr />
+
+    <!-- DEDUCT SECTION -->
+    <section>
+      <h2>Deduct Expense</h2>
+      <form id="deduct-form">
+        <select id="category">
+          <option value="emergency">Emergency</option>
+          <option value="food">Food</option>
+          <option value="medical">Medical</option>
+          <option value="transportation">Transportation</option>
+          <option value="civic">Civic</option>
+          <option value="internet">Internet/Mobile</option>
+          <option value="other">Other</option>
+          <option value="layla">Layla</option>
+          <option value="marriage">Marriage</option>
+          <option value="savings">Savings</option>
+          <option value="investment">Investment</option>
+          <option value="pocket">Pocket</option>
+        </select>
+
+        <input type="number" id="deductAmount" placeholder="Amount to deduct" step="0.01" required />
+        <button type="submit">Deduct</button>
+      </form>
+    </section>
+
+    <hr />
+
+    <!-- TOTALS -->
+    <section>
+      <h2>Current Balances</h2>
+
+      <div>Total Balance: <strong id="totalBalance">$0.00</strong></div>
+      <div>Future Total: <strong id="futureTotal">$0.00</strong></div>
+      <div>Spending Total: <strong id="spendingTotal">$0.00</strong></div>
+
+      <ul id="balances"></ul>
+
+      <button id="resetButton">Reset All</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
