@@ -18,26 +18,37 @@ let categories = JSON.parse(localStorage.getItem('categories')) || {
 };
 
 function updateDisplay() {
-    balancesList.innerHTML = '';
-  
-    let total = 0;
-    for (const [key, value] of Object.entries(categories)) {
-      total += value;
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <span>${key.charAt(0).toUpperCase() + key.slice(1)}</span>
-        <strong>$${value.toFixed(2)}</strong>
-      `;
-      balancesList.appendChild(li);
+  balancesList.innerHTML = '';
+
+  let total = 0;
+  let futureTotal = 0;
+  let spendingTotal = 0;
+
+  for (const [key, value] of Object.entries(categories)) {
+    total += value;
+
+    // Future categories
+    if (key === 'savings' || key === 'marriage' || key === 'investment') {
+      futureTotal += value;
+    } else {
+      spendingTotal += value;
     }
-  
-    // Update total income display
-    const totalDisplay = document.querySelector('#total-income strong');
-    totalDisplay.textContent = `$${total.toFixed(2)}`;
-  
-    // Save to localStorage
-    localStorage.setItem('categories', JSON.stringify(categories));
+
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span>${key.charAt(0).toUpperCase() + key.slice(1)}</span>
+      <strong>$${value.toFixed(2)}</strong>
+    `;
+    balancesList.appendChild(li);
   }
+
+  // Update totals
+  document.getElementById('totalBalance').textContent = `$${total.toFixed(2)}`;
+  document.getElementById('futureTotal').textContent = `$${futureTotal.toFixed(2)}`;
+  document.getElementById('spendingTotal').textContent = `$${spendingTotal.toFixed(2)}`;
+
+  localStorage.setItem('categories', JSON.stringify(categories));
+}
 
 // Allocate paycheck based on percentage inputs
 paycheckForm.addEventListener('submit', (e) => {
