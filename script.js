@@ -24,10 +24,9 @@ function updateDisplay() {
   let futureTotal = 0;
   let spendingTotal = 0;
 
-  for (const [key, value] of Object.entries(categories)) {
+  Object.entries(categories).forEach(([key, value]) => {
     total += value;
 
-    // Future categories
     if (key === 'savings' || key === 'marriage' || key === 'investment') {
       futureTotal += value;
     } else {
@@ -40,9 +39,8 @@ function updateDisplay() {
       <strong>$${value.toFixed(2)}</strong>
     `;
     balancesList.appendChild(li);
-  }
+  });
 
-  // Update totals
   document.getElementById('totalBalance').textContent = `$${total.toFixed(2)}`;
   document.getElementById('futureTotal').textContent = `$${futureTotal.toFixed(2)}`;
   document.getElementById('spendingTotal').textContent = `$${spendingTotal.toFixed(2)}`;
